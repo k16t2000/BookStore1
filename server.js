@@ -5,6 +5,8 @@ const rootDirectory=require('./utilities/path');
 const adminRouter=require('./routes/admin');
 const app=express();
 
+app.use(express.static('public'));
+
 app.use('/shop', (req,res)=>{
     res.sendFile(path.join(rootDirectory, 'views', 'shop.html'));
 });
